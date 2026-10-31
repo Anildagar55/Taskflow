@@ -1,0 +1,26 @@
+server:
+  port: 8081
+  shutdown: graceful
+
+spring:
+  application:
+    name: taskflow-api
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: never
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: TaskFlow task management API
