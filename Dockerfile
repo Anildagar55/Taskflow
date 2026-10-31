@@ -2,7 +2,7 @@
 # Stage 1 compiles and tests the code with the full JDK and Maven.
 # Stage 2 keeps only the runnable jar on a slim JRE, so the final image
 # carries no build tooling and no source.
-FROM maven:3.9-eclipse-temurin-21 AS build
+FROM maven:3.9-eclipse-temurin-26 AS build
 WORKDIR /workspace
 
 # Copy the pom first so dependency downloads are cached in their own layer.
